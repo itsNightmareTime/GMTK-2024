@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://be7mf5tsunqmm"]
+
+[ext_resource type="AudioStream" uid="uid://cd8hfbrjmsfpa" path="res://Assets/Music/1-07 The Overworld Theme.mp3" id="1_765hc"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_765hc")
+autoplay = true
+bus = &"Music"
