@@ -9,42 +9,44 @@ var last_direction = "Down"
 var detect_interaction_length: int = 1
 var detect_interaction_direction: Vector2 = Vector2(0,1)
 
+var player = "Player_One_"
+
 func _process(delta):
 	# can switch between running and walking speeds
 	var current_speed = SPEED
 	velocity = Vector2.ZERO
 	
-	if Input.is_action_pressed("Interact"):
+	if Input.is_action_pressed(player + "Interact"):
 		Interaction()
 	
-	if Input.is_action_pressed("Run"):
-		current_speed = RUN_SPEED
+	#if Input.is_action_pressed(player + "Run"):
+	current_speed = RUN_SPEED
 
 	#Get Action
-	if Input.is_action_pressed("Up"):
+	if Input.is_action_pressed(player + "Up"):
 		velocity.y -= current_speed
 		last_direction = "Up"
 		detect_interaction.target_position = Vector2(0, -detect_interaction_length)
 		
-	if Input.is_action_pressed("Down"):
+	if Input.is_action_pressed(player + "Down"):
 		velocity.y += current_speed
 		last_direction = "Down"
 		detect_interaction.target_position = Vector2(0, detect_interaction_length)
 		
-	if Input.is_action_pressed("Right"):
+	if Input.is_action_pressed(player + "Right"):
 		velocity.x += current_speed
 		last_direction = "Right"
 		detect_interaction.target_position = Vector2(detect_interaction_length, 0)
 		
-	if Input.is_action_pressed("Left"):
+	if Input.is_action_pressed(player + "Left"):
 		velocity.x -= current_speed
 		last_direction = "Left"
 		detect_interaction.target_position = Vector2(-detect_interaction_length, 0)
 
 	# Handle opposite directions
-	if Input.is_action_pressed("Up") and Input.is_action_pressed("Down"):
+	if Input.is_action_pressed(player + "Up") and Input.is_action_pressed(player + "Down"):
 		velocity.y = 0
-	if Input.is_action_pressed("Left") and Input.is_action_pressed("Right"):
+	if Input.is_action_pressed(player + "Left") and Input.is_action_pressed(player + "Right"):
 		velocity.x = 0
 
 	# Move
