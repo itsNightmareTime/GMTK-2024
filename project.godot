@@ -105,6 +105,9 @@ Player_Three_Interact={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Wall"
 2d_physics/layer_3="Ground"
+2d_physics/layer_4="Movable"
+2d_physics/layer_5="Pickup"
+2d_physics/layer_6="Damage"
 
 [rendering]
 
