@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=4 uid="uid://dm1cf2jrck4be"]
 
 [ext_resource type="Texture2D" uid="uid://cug5hv5rkmi5o" path="res://Assets/Sprites/Tileset/Tileset.png" id="1_ilkjy"]
-[ext_resource type="PackedScene" uid="uid://db6mvn23i5jfw" path="res://Scenes/Player1.tscn" id="2_tloki"]
-[ext_resource type="PackedScene" uid="uid://doe4pglf5jux4" path="res://Scenes/Player2.tscn" id="3_satj2"]
-[ext_resource type="PackedScene" uid="uid://m1p740ycish5" path="res://Scenes/Player3.tscn" id="4_05hd8"]
-[ext_resource type="PackedScene" uid="uid://dxhv5lpbndcwu" path="res://Scenes/Movable_Object.tscn" id="5_s5vjh"]
+[ext_resource type="PackedScene" uid="uid://3rdekvatfa3p" path="res://Scenes/Player1.tscn" id="2_tloki"]
+[ext_resource type="PackedScene" uid="uid://dcj2t1qkodnoc" path="res://Scenes/Player2.tscn" id="3_satj2"]
+[ext_resource type="PackedScene" uid="uid://cu2wwx3sjq386" path="res://Scenes/Player3.tscn" id="4_05hd8"]
+[ext_resource type="PackedScene" path="res://Scenes/Movable_Object.tscn" id="5_s5vjh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjmmy"]
 texture = ExtResource("1_ilkjy")
