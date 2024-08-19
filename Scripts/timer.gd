@@ -24,7 +24,7 @@ func _on_timer_timeout() -> void:
 	if current_seconds == 0:
 		if current_minutes > 0:
 			current_minutes -= 1
-			current_seconds = 60
+			current_seconds = 59
 	else:
 		current_seconds -= 1
 	set_text()

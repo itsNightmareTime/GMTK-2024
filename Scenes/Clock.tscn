@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccf35n03ycxbx"]
 
 [ext_resource type="Script" path="res://Scripts/timer.gd" id="1_ov7i7"]
-[ext_resource type="Texture2D" uid="uid://cw4so3h6u86ff" path="res://Assets/Sprites/UI/White_Background.png" id="2_hlahd"]
+[ext_resource type="Texture2D" uid="uid://cw4so3h6u86ff" path="res://Assets/Sprites/UI/Timer_Background.png" id="2_hlahd"]
 
 [node name="Clock" type="Control"]
 layout_mode = 3
