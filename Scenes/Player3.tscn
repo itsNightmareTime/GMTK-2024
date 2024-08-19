@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cu2wwx3sjq386"]
+[gd_scene load_steps=29 format=3 uid="uid://m1p740ycish5"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_4wb8v"]
 [ext_resource type="Texture2D" uid="uid://cmyobpabgx2yj" path="res://Assets/Sprites/Characters/Sailor.png" id="2_u2k2m"]
@@ -217,8 +217,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4bs4"]
 size = Vector2(6, 12)
 
-[node name="Player" type="CharacterBody2D"]
-collision_mask = 58
+[node name="Player3" type="CharacterBody2D"]
+collision_mask = 59
 script = ExtResource("1_4wb8v")
 PLAYER_NUMBER = 3
 
@@ -231,8 +231,9 @@ animation = &"Down"
 z_index = 5
 shape = SubResource("RectangleShape2D_q4bs4")
 
-[node name="Detect_Interaction" type="RayCast2D" parent="."]
+[node name="Player_Three_RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, 2)
 scale = Vector2(11, 11)
 exclude_parent = false
 target_position = Vector2(0, 1)
+collision_mask = 59
