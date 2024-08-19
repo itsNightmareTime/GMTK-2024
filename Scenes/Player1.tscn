@@ -1,6 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://db6mvn23i5jfw"]
+[gd_scene load_steps=29 format=3 uid="uid://3rdekvatfa3p"]
 
-[ext_resource type="Script" path="res://Scripts/player1.gd" id="1_qywco"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_qnk5u"]
 [ext_resource type="Texture2D" uid="uid://b5jkgg0bodh7r" path="res://Assets/Sprites/Characters/Black_Coat.png" id="2_jpaf7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lv6xg"]
@@ -219,7 +219,7 @@ size = Vector2(6, 12)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 59
-script = ExtResource("1_qywco")
+script = ExtResource("1_qnk5u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)

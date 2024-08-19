@@ -1,6 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://doe4pglf5jux4"]
+[gd_scene load_steps=29 format=3 uid="uid://dcj2t1qkodnoc"]
 
-[ext_resource type="Script" path="res://Scripts/player2.gd" id="1_265oe"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_gvxww"]
 [ext_resource type="Texture2D" uid="uid://cybdnfr1knixy" path="res://Assets/Sprites/Characters/Pink_Hair.png" id="2_vlrcf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4cy1g"]
@@ -219,7 +219,8 @@ size = Vector2(6, 12)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 58
-script = ExtResource("1_265oe")
+script = ExtResource("1_gvxww")
+PLAYER_NUMBER = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
