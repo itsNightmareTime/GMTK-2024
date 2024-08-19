@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0481b4lwdvae"]
 
-[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_jg1v7"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_jg1v7"]
 [ext_resource type="AudioStream" uid="uid://cib4qxgfgrm4n" path="res://Assets/Music/Magic Scout - Farm.mp3" id="2_d4v6n"]
 
 [node name="Menu" type="Control"]

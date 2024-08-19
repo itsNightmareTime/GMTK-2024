@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxhv5lpbndcwu"]
 
-[ext_resource type="Script" path="res://Scenes/movable_object_sound.gd" id="1_2dxvd"]
+[ext_resource type="Script" path="res://Scripts/movable_object_sound.gd" id="1_2dxvd"]
 [ext_resource type="Texture2D" uid="uid://c5dvd0ssv2iio" path="res://Assets/Sprites/Objects/Box_1.png" id="1_lkudy"]
 [ext_resource type="AudioStream" uid="uid://baoqw6kiu3lrs" path="res://Assets/Sound Effects/Slide.mp3" id="3_q4vy7"]
 

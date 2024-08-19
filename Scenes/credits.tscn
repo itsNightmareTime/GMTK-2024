@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://btf6dx6345w3r"]
 
-[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_xdsv5"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_xdsv5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ii0py"]
 

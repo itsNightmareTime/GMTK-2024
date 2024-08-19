@@ -120,10 +120,3 @@ func direction_to_vector2D() -> Vector2:
 		return Vector2.RIGHT
 	else:
 		return Vector2.LEFT
-	
-		
-
-		
-
-		
-		
