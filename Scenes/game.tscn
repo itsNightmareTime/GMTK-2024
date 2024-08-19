@@ -252,6 +252,7 @@ texture = ExtResource("1_ilkjy")
 11:3/0 = 0
 12:3/0 = 0
 13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -6.75, 8, -6.875, 8, 8, -1.875, 8, -7, 8)
 14:3/0 = 0
 14:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:3/0 = 0
@@ -326,10 +327,10 @@ texture = ExtResource("1_ilkjy")
 15:4/0 = 0
 15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:4/0 = 0
-16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -8, -2, -8, -2, 8, -7, 8)
 17:4/0 = 0
 18:4/0 = 0
-18:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -8, 8, -8, 8, 8, 1.875, 8)
 19:4/0 = 0
 20:4/0 = 0
 21:4/0 = 0
@@ -522,6 +523,7 @@ texture = ExtResource("1_ilkjy")
 13:7/0 = 0
 14:7/0 = 0
 15:7/0 = 0
+15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -6.75, 8, -6.875, 8, 8, -1.875, 8, -7, 8)
 16:7/0 = 0
 17:7/0 = 0
 18:7/0 = 0
@@ -4184,6 +4186,7 @@ texture = ExtResource("1_ilkjy")
 
 [sub_resource type="TileSet" id="TileSet_55fw5"]
 physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 9
 sources/0 = SubResource("TileSetAtlasSource_mjmmy")
 
 [node name="Game" type="Node2D"]

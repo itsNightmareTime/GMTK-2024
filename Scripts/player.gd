@@ -106,7 +106,6 @@ func handle_interaction():
 func check_collisions() -> bool:
 	if my_detect_interaction.is_colliding():
 		object_collision_layer_name = my_detect_interaction.get_collider().name
-		print(object_collision_layer_name)
 		return true
 	else:
 		object_collision_layer_name = ""
