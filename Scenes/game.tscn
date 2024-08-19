@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dm1cf2jrck4be"]
+[gd_scene load_steps=9 format=4 uid="uid://dm1cf2jrck4be"]
 
 [ext_resource type="Texture2D" uid="uid://cug5hv5rkmi5o" path="res://Assets/Sprites/Tileset/Tileset.png" id="1_ilkjy"]
 [ext_resource type="PackedScene" uid="uid://db6mvn23i5jfw" path="res://Scenes/Player1.tscn" id="2_tloki"]
 [ext_resource type="PackedScene" uid="uid://doe4pglf5jux4" path="res://Scenes/Player2.tscn" id="3_satj2"]
 [ext_resource type="PackedScene" uid="uid://m1p740ycish5" path="res://Scenes/Player3.tscn" id="4_05hd8"]
 [ext_resource type="PackedScene" uid="uid://dxhv5lpbndcwu" path="res://Scenes/Movable_Object.tscn" id="5_s5vjh"]
+[ext_resource type="PackedScene" uid="uid://ccf35n03ycxbx" path="res://Scenes/Clock.tscn" id="6_f7buf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjmmy"]
 texture = ExtResource("1_ilkjy")
@@ -4206,20 +4207,6 @@ tile_set = SubResource("TileSet_55fw5")
 position = Vector2(216.585, 127.92)
 zoom = Vector2(2, 2)
 
-[node name="Players" type="Node" parent="."]
-
-[node name="Player1" parent="Players" instance=ExtResource("2_tloki")]
-z_index = 5
-position = Vector2(-58, 12)
-
-[node name="Player2" parent="Players" instance=ExtResource("3_satj2")]
-z_index = 5
-position = Vector2(-53, 126)
-
-[node name="Player3" parent="Players" instance=ExtResource("4_05hd8")]
-z_index = 5
-position = Vector2(-58, 242)
-
 [node name="BoxesLevel1" type="Node" parent="."]
 
 [node name="Movable_Object" parent="BoxesLevel1" instance=ExtResource("5_s5vjh")]
@@ -4236,3 +4223,25 @@ position = Vector2(345, -10)
 
 [node name="Movable_Object5" parent="BoxesLevel1" instance=ExtResource("5_s5vjh")]
 position = Vector2(-23, 113)
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Player1" parent="Players" instance=ExtResource("2_tloki")]
+z_index = 5
+position = Vector2(-58, 12)
+
+[node name="Player2" parent="Players" instance=ExtResource("3_satj2")]
+z_index = 5
+position = Vector2(-53, 126)
+
+[node name="Player3" parent="Players" instance=ExtResource("4_05hd8")]
+z_index = 5
+position = Vector2(-58, 242)
+
+[node name="Clock" parent="." instance=ExtResource("6_f7buf")]
+process_mode = 3
+top_level = true
+offset_left = -95.0
+offset_top = -48.0
+offset_right = -49.0
+offset_bottom = -26.0
