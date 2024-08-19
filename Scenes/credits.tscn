@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c64ip30mmly6i"]
+[gd_scene load_steps=3 format=3 uid="uid://btf6dx6345w3r"]
 
 [ext_resource type="Script" path="res://Scenes/credits.gd" id="1_xdsv5"]
 
@@ -14,7 +14,9 @@ offset_right = 777.0
 offset_bottom = 99.0
 text = "\"Manor\" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
-http://creativecommons.org/licenses/by/4.0/"
+http://creativecommons.org/licenses/by/4.0/
+
+Metal boxes sliding on each other 2 by JakLocke -- https://freesound.org/s/697572/ -- License: Attribution 4.0"
 fit_content = true
 
 [node name="Button" type="Button" parent="."]

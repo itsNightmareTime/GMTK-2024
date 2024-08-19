@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/movable_object_sound.gd" id="1_2dxvd"]
 [ext_resource type="Texture2D" uid="uid://c5dvd0ssv2iio" path="res://Assets/Sprites/Objects/Box_1.png" id="1_lkudy"]
-[ext_resource type="AudioStream" uid="uid://ba5pkj8vfoil1" path="res://Assets/Sound Effects/moveable_1.wav" id="3_6p37g"]
+[ext_resource type="AudioStream" uid="uid://baoqw6kiu3lrs" path="res://Assets/Sound Effects/Slide.mp3" id="3_q4vy7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n681o"]
 size = Vector2(14, 14)
@@ -21,4 +21,8 @@ shape = SubResource("RectangleShape2D_n681o")
 texture = ExtResource("1_lkudy")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_6p37g")
+process_mode = 3
+stream = ExtResource("3_q4vy7")
+area_mask = 9
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

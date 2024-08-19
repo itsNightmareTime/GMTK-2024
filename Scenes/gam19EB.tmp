@@ -4208,6 +4208,7 @@ zoom = Vector2(2, 2)
 [node name="Player1" parent="Players" instance=ExtResource("2_tloki")]
 z_index = 5
 position = Vector2(-58, 12)
+PLAYER_NUMBER = null
 
 [node name="Player2" parent="Players" instance=ExtResource("3_satj2")]
 z_index = 5

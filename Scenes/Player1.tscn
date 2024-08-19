@@ -231,6 +231,7 @@ z_index = 5
 shape = SubResource("RectangleShape2D_q4bs4")
 
 [node name="Player_One_RayCast2D" type="RayCast2D" parent="."]
+z_index = 5
 position = Vector2(0, 2)
 scale = Vector2(11, 11)
 exclude_parent = false
