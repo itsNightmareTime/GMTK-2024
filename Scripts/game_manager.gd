@@ -4,7 +4,9 @@ extends Node
 @onready var player_2: CharacterBody2D = $"../Players/Player2"
 @onready var player_3: CharacterBody2D = $"../Players/Player3"
 @onready var camera_2d: Camera2D = $"../Camera2D"
-@onready var clock: Control = $"../Clock"
+@onready var clock_3: Control = $"../Clock3"
+@onready var finished_text: RichTextLabel = $Finished_text
+
 
 var level_one_finished: bool = false
 var current_level = "One"
@@ -19,12 +21,11 @@ var level_three_bot_finished: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera_2d.transform.origin = Vector2(217, 128)
-	
 	player_1.transform.origin = Vector2(-70, 8)
 	# set player 2 and 3 far far away
 	player_2.transform.origin = Vector2(0, 1000)
 	player_3.transform.origin = Vector2(0, 1000)
-
+	finished_text.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,13 +39,12 @@ func _process(delta: float) -> void:
 		level_two_top_finished = false
 		level_two_mid_finished = false
 		
-	if (level_three_top_finished and level_three_mid_finished and level_three_bot_finished):
-		level_two_to_level_three()
+	if (level_three_top_finished and level_three_mid_finished and level_three_bot_finished and not current_level == "three"):
 		current_level = "three"
 		level_three_top_finished = false
 		level_three_mid_finished = false
 		level_three_bot_finished = false
-
+		level_three_finished()
 
 func level_one_to_level_two():
 	camera_2d.transform.origin = Vector2(872, 128)
@@ -61,7 +61,9 @@ func level_two_to_level_three():
 	player_3.transform.origin = Vector2(1250, 240) 
 
 func level_three_finished():
-	pass
+	clock_3.visible = false
+	finished_text.text = "Your Time was " + clock_3.get_time() + "! Press 'r' to restart or 'x' to quit"
+	finished_text.visible = true
 
 func _on_finish_line_body_entered(body: Node2D) -> void:
 	level_one_finished = true

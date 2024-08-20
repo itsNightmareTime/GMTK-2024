@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dm1cf2jrck4be"]
+[gd_scene load_steps=12 format=4 uid="uid://dm1cf2jrck4be"]
 
 [ext_resource type="Texture2D" uid="uid://cug5hv5rkmi5o" path="res://Assets/Sprites/Tileset/Tileset.png" id="1_ilkjy"]
 [ext_resource type="PackedScene" uid="uid://db6mvn23i5jfw" path="res://Scenes/Player1.tscn" id="2_tloki"]
@@ -4192,13 +4192,33 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 9
 sources/0 = SubResource("TileSetAtlasSource_mjmmy")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaivj"]
+
 [node name="Game" type="Node2D"]
 
 [node name="Clock" parent="." instance=ExtResource("6_f7buf")]
-offset_left = -91.0
-offset_top = -48.0
-offset_right = -51.0
-offset_bottom = -8.0
+offset_left = -95.0
+offset_top = 61.0
+offset_right = -55.0
+offset_bottom = 101.0
+start_seconds = 0
+start_minutes = 0
+
+[node name="Clock2" parent="." instance=ExtResource("6_f7buf")]
+offset_left = 562.0
+offset_top = 60.0
+offset_right = 602.0
+offset_bottom = 100.0
+start_seconds = 0
+start_minutes = 0
+
+[node name="Clock3" parent="." instance=ExtResource("6_f7buf")]
+offset_left = 1219.0
+offset_top = 60.0
+offset_right = 1259.0
+offset_bottom = 100.0
+start_seconds = 0
+start_minutes = 0
 
 [node name="WorldTextures" type="Node" parent="."]
 
@@ -4279,15 +4299,23 @@ position = Vector2(1832, 138)
 [node name="FinishLine_3_bot" parent="GameManager/Level_three_finish_line" instance=ExtResource("8_2sfxg")]
 position = Vector2(1817, 233)
 
+[node name="Finished_text" type="RichTextLabel" parent="GameManager"]
+z_index = 7
+offset_left = 1217.0
+offset_top = 59.0
+offset_right = 1840.0
+offset_bottom = 83.0
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_aaivj")
+bbcode_enabled = true
+text = "[b]Your Time was: "
+fit_content = true
+
 [connection signal="body_entered" from="GameManager/Level_one_finish_line/FinishLine" to="GameManager" method="_on_finish_line_body_entered"]
 [connection signal="body_entered" from="GameManager/Level_two_finish_line/FinishLine_top" to="GameManager" method="_on_finish_line_top_body_entered"]
-[connection signal="body_entered" from="GameManager/Level_two_finish_line/FinishLine_mid" to="GameManager" method="_on_finish_line_2_body_entered"]
 [connection signal="body_entered" from="GameManager/Level_two_finish_line/FinishLine_mid" to="GameManager" method="_on_finish_line_mid_body_entered"]
 [connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_top" to="GameManager" method="_on_finish_line_3_top_body_entered"]
-[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_top" to="GameManager" method="_on_finish_line_top_body_entered"]
-[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_mid" to="GameManager" method="_on_finish_line_2_body_entered"]
 [connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_mid" to="GameManager" method="_on_finish_line_3_mid_body_entered"]
-[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_mid" to="GameManager" method="_on_finish_line_mid_body_entered"]
-[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_bot" to="GameManager" method="_on_finish_line_2_body_entered"]
 [connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_bot" to="GameManager" method="_on_finish_line_3_bot_body_entered"]
-[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_bot" to="GameManager" method="_on_finish_line_mid_body_entered"]

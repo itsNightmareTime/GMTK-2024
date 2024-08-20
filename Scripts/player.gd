@@ -29,6 +29,13 @@ const PLAYER_NAMES = {
 
 func _process(delta):
 	
+	#restart the game
+	if (Input.is_action_pressed("reload")):
+		get_tree().change_scene_to_file('res://Scenes/menu.tscn')
+		
+	if (Input.is_action_pressed("quit")):
+		get_tree().quit()
+	
 	var current_speed = SPEED
 	velocity = Vector2.ZERO
 	

@@ -19,12 +19,13 @@ func Reset_Timer():
 func set_text():
 	timer_text.text = str(current_minutes) + ":" + str(current_seconds).pad_zeros(2)
 
+func get_time() -> String:
+	return str(current_minutes) + ":" + str(current_seconds).pad_zeros(2)
 
 func _on_timer_timeout() -> void:
-	if current_seconds == 0:
-		if current_minutes > 0:
-			current_minutes -= 1
-			current_seconds = 59
+	if current_seconds == 59:
+		current_minutes += 1
+		current_seconds = 0
 	else:
-		current_seconds -= 1
+		current_seconds += 1
 	set_text()

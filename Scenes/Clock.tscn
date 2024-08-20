@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccf35n03ycxbx"]
+[gd_scene load_steps=2 format=3 uid="uid://ccf35n03ycxbx"]
 
 [ext_resource type="Script" path="res://Scripts/timer.gd" id="1_ov7i7"]
-[ext_resource type="Texture2D" uid="uid://cw4so3h6u86ff" path="res://Assets/Sprites/UI/Timer_Background.png" id="2_hlahd"]
 
 [node name="Clock" type="Control"]
 layout_mode = 3
@@ -19,11 +18,5 @@ offset_right = 59.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "01:30"
-
-[node name="Sprite2D" type="Sprite2D" parent="Label"]
-top_level = true
-position = Vector2(-79, -36)
-scale = Vector2(0.318841, 0.504767)
-texture = ExtResource("2_hlahd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
