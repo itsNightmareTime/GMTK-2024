@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=3 uid="uid://5hnfabjscycm"]
+
+[ext_resource type="Script" path="res://Scripts/options.gd" id="1_hr7kl"]
+[ext_resource type="AudioStream" uid="uid://cib4qxgfgrm4n" path="res://Assets/Music/Magic Scout - Farm.mp3" id="2_ftvyu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gp7n7"]
+
+[sub_resource type="FontFile" id="FontFile_21uhi"]
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_6nfee"]
+font = SubResource("FontFile_21uhi")
+font_size = 20
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hr7kl")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+icon = SubResource("PlaceholderTexture2D_gp7n7")
+
+[node name="Main Volume" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -20.0
+offset_right = 120.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume Label" type="Label" parent="Main Volume"]
+layout_mode = 0
+offset_left = -121.0
+offset_top = -4.0
+offset_right = 133.0
+offset_bottom = 51.0
+text = "Master Volume:"
+label_settings = SubResource("LabelSettings_6nfee")
+
+[node name="VolumeSlider" type="HSlider" parent="Main Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.22
+anchor_bottom = 0.2
+offset_left = 21.0
+offset_top = 3.0
+offset_right = 168.2
+offset_bottom = 15.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ftvyu")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="Music Volume" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 10.0
+offset_right = 119.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume Label" type="Label" parent="Music Volume"]
+layout_mode = 0
+offset_left = -122.0
+offset_top = 39.0
+offset_right = 132.0
+offset_bottom = 94.0
+text = "Music Volume:"
+label_settings = SubResource("LabelSettings_6nfee")
+
+[node name="MusicSlider" type="HSlider" parent="Music Volume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.22
+anchor_bottom = 0.2
+offset_left = 20.0
+offset_top = 45.0
+offset_right = 167.2
+offset_bottom = 57.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_button_pressed"]
+[connection signal="drag_ended" from="Main Volume/VolumeSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="drag_ended" from="Main Volume/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Main Volume/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="drag_ended" from="Music Volume/MusicSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="drag_ended" from="Music Volume/MusicSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Music Volume/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Music Volume/MusicSlider" to="." method="_on_volume_slider_value_changed"]
