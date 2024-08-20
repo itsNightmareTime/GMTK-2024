@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://qutv3wcg13ln"]
+
+[ext_resource type="AudioStream" uid="uid://cib4qxgfgrm4n" path="res://Assets/Music/Magic Scout - Farm.mp3" id="1_kbfl1"]
+
+[node name="global_Audio" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_kbfl1")
+volume_db = -20.0
+autoplay = true
+parameters/looping = false

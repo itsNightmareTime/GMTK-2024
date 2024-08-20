@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0481b4lwdvae"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_jg1v7"]
-[ext_resource type="AudioStream" uid="uid://cib4qxgfgrm4n" path="res://Assets/Music/Magic Scout - Farm.mp3" id="2_d4v6n"]
+[ext_resource type="Texture2D" uid="uid://csrp0h2bxcp84" path="res://Assets/Sprites/UI/Title Screen Background.png" id="2_bvg0t"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,7 +12,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jg1v7")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(641, 361.5)
+scale = Vector2(5.013, 5)
+texture = ExtResource("2_bvg0t")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,11 +47,6 @@ text = "Credits"
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_d4v6n")
-volume_db = -20.0
-autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
