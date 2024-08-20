@@ -12,7 +12,7 @@ func _on_start_button_pressed():
 	get_tree().change_scene_to_file('res://Scenes/game.tscn')
 
 func _on_options_button_pressed():
-	pass # TODO: implement
+	get_tree().change_scene_to_file('res://Scenes/options.tscn')
 
 func _on_credits_button_pressed():
 	get_tree().change_scene_to_file('res://Scenes/credits.tscn')
