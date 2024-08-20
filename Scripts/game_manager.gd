@@ -22,6 +22,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (level_one_finished):
 		level_one_to_level_two()
+		level_one_finished = false
 
 
 func level_one_to_level_two():

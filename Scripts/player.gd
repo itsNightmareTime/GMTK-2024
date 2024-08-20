@@ -35,7 +35,7 @@ func _process(delta):
 	handle_block_push(delta)
 	handle_interaction()	
 	velocity = handle_directional_input(current_speed)
-
+	
 	# Move
 	if velocity != Vector2.ZERO:
 		velocity = velocity.normalized() * current_speed * delta
@@ -91,7 +91,7 @@ func handle_directional_input(current_speed: float) -> Vector2:
 		new_velocity.y = 0
 	if Input.is_action_pressed(PLAYER_NAMES[PLAYER_NUMBER] + "Left") and Input.is_action_pressed(PLAYER_NAMES[PLAYER_NUMBER] + "Right"):
 		new_velocity.x = 0
-		
+	
 	return new_velocity
 			
 func handle_interaction():
