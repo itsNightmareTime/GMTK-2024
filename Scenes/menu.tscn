@@ -40,16 +40,66 @@ text = "Start"
 layout_mode = 2
 text = "Options"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Credits"
-
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
+[node name="Controls" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 593.0
+offset_right = 654.0
+offset_bottom = 720.0
+theme_override_colors/font_color = Color(0.524669, 0.47628, 0.324274, 1)
+theme_override_colors/font_shadow_color = Color(0.903226, 0.776575, 0.699133, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Controls:
+Player 1: WASD
+Player 2: IJKL
+Player 3: Arrow Keys
+Get all Players to the end of their maze to continue. Try to get the fastest time!"
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 566.0
+offset_right = 1334.0
+offset_bottom = 719.0
+theme_override_colors/font_color = Color(0.524669, 0.47628, 0.324274, 1)
+theme_override_colors/font_shadow_color = Color(0.903226, 0.776575, 0.699133, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "\"Manor\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+
+All Pixel Art was made by isaiah658. http://opengameart.org/users/isaiah658"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(0.53524, 0.686283, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0722867, 0.258363, 0.611499, 1)
+theme_override_colors/font_outline_color = Color(0.926119, 0.6923, 0.808336, 1)
+theme_override_font_sizes/font_size = 100
+text = "Triad Labyrinth"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Created_by" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 546.0
+offset_right = 481.0
+offset_bottom = 605.0
+theme_override_colors/font_color = Color(0.832554, 0.691518, 0.413961, 1)
+theme_override_colors/font_shadow_color = Color(0.129728, 0.146833, 0.482956, 1)
+theme_override_colors/font_outline_color = Color(0.926119, 0.6923, 0.808336, 1)
+theme_override_font_sizes/font_size = 20
+text = "Created by Brian Bessler and Harrion Armstrong"
+vertical_alignment = 1
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
