@@ -7,6 +7,14 @@ extends Node
 @onready var clock: Control = $"../Clock"
 
 var level_one_finished: bool = false
+var current_level = "One"
+
+var level_two_top_finished: bool = false
+var level_two_mid_finished: bool = false
+
+var level_three_top_finished: bool = false
+var level_three_mid_finished: bool = false
+var level_three_bot_finished: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,18 +31,47 @@ func _process(delta: float) -> void:
 	if (level_one_finished):
 		level_one_to_level_two()
 		level_one_finished = false
+		
+	if (level_two_top_finished and level_two_mid_finished):
+		level_two_to_level_three()
+		current_level = "two"
+		level_two_top_finished = false
+		level_two_mid_finished = false
+		
+	if (level_three_top_finished and level_three_mid_finished and level_three_bot_finished):
+		level_two_to_level_three()
+		current_level = "three"
+		level_three_top_finished = false
+		level_three_mid_finished = false
+		level_three_bot_finished = false
 
 
 func level_one_to_level_two():
-	camera_2d.transform.origin = Vector2(867, 128)
+	camera_2d.transform.origin = Vector2(872, 128)
+	#clock.transform.origin = Vector2(500,-120)
 	player_1.transform.origin = Vector2(600, 3)
-	# set player 2 and 3 far far away
 	player_2.transform.origin = Vector2(600, 120)
-	player_3.transform.origin = Vector2(600, 250) #just testing if he can walk, player 3 shouldn't be visible here
+	player_3.transform.origin = Vector2(0, 1000) # send 3 far far away
+	
+func level_two_to_level_three():
+	camera_2d.transform.origin = Vector2(1528, 128)
+	#clock.transform.origin = Vector2(1200,-120)
+	player_1.transform.origin = Vector2(1250, 3)
+	player_2.transform.origin = Vector2(1250, 120)
+	player_3.transform.origin = Vector2(1250, 240) 
+
+func level_three_finished():
+	pass
 
 func _on_finish_line_body_entered(body: Node2D) -> void:
 	level_one_finished = true
-
-
-func _on_finish_line_2_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_finish_line_top_body_entered(body: Node2D) -> void:
+	level_two_top_finished = true
+func _on_finish_line_mid_body_entered(body: Node2D) -> void:
+	level_two_mid_finished = true
+func _on_finish_line_3_top_body_entered(body: Node2D) -> void:
+	level_three_top_finished = true
+func _on_finish_line_3_mid_body_entered(body: Node2D) -> void:
+	level_three_mid_finished = true
+func _on_finish_line_3_bot_body_entered(body: Node2D) -> void:
+	level_three_bot_finished = true

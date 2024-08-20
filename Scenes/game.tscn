@@ -4242,24 +4242,52 @@ position = Vector2(625, 126)
 
 [node name="Player1" parent="Players" instance=ExtResource("2_tloki")]
 z_index = 5
-position = Vector2(-95, 141)
+position = Vector2(1251, 11)
 
 [node name="Player2" parent="Players" instance=ExtResource("3_satj2")]
 z_index = 5
-position = Vector2(600, 120)
+position = Vector2(1251, 136)
 
 [node name="Player3" parent="Players" instance=ExtResource("4_05hd8")]
 z_index = 5
-position = Vector2(605, 0)
+position = Vector2(1255, 241)
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("7_my7d8")
 
-[node name="FinishLine" parent="GameManager" instance=ExtResource("8_2sfxg")]
+[node name="Level_one_finish_line" type="Node" parent="GameManager"]
+
+[node name="FinishLine" parent="GameManager/Level_one_finish_line" instance=ExtResource("8_2sfxg")]
 position = Vector2(520, -39)
 
-[node name="FinishLine2" parent="GameManager" instance=ExtResource("8_2sfxg")]
-position = Vector2(1189, -32)
+[node name="Level_two_finish_line" type="Node" parent="GameManager"]
 
-[connection signal="body_entered" from="GameManager/FinishLine" to="GameManager" method="_on_finish_line_body_entered"]
-[connection signal="body_entered" from="GameManager/FinishLine2" to="GameManager" method="_on_finish_line_2_body_entered"]
+[node name="FinishLine_top" parent="GameManager/Level_two_finish_line" instance=ExtResource("8_2sfxg")]
+position = Vector2(1176, 9)
+
+[node name="FinishLine_mid" parent="GameManager/Level_two_finish_line" instance=ExtResource("8_2sfxg")]
+position = Vector2(1177, 120)
+
+[node name="Level_three_finish_line" type="Node" parent="GameManager"]
+
+[node name="FinishLine_3_top" parent="GameManager/Level_three_finish_line" instance=ExtResource("8_2sfxg")]
+position = Vector2(1832, 9)
+
+[node name="FinishLine_3_mid" parent="GameManager/Level_three_finish_line" instance=ExtResource("8_2sfxg")]
+position = Vector2(1832, 138)
+
+[node name="FinishLine_3_bot" parent="GameManager/Level_three_finish_line" instance=ExtResource("8_2sfxg")]
+position = Vector2(1817, 233)
+
+[connection signal="body_entered" from="GameManager/Level_one_finish_line/FinishLine" to="GameManager" method="_on_finish_line_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_two_finish_line/FinishLine_top" to="GameManager" method="_on_finish_line_top_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_two_finish_line/FinishLine_mid" to="GameManager" method="_on_finish_line_2_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_two_finish_line/FinishLine_mid" to="GameManager" method="_on_finish_line_mid_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_top" to="GameManager" method="_on_finish_line_3_top_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_top" to="GameManager" method="_on_finish_line_top_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_mid" to="GameManager" method="_on_finish_line_2_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_mid" to="GameManager" method="_on_finish_line_3_mid_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_mid" to="GameManager" method="_on_finish_line_mid_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_bot" to="GameManager" method="_on_finish_line_2_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_bot" to="GameManager" method="_on_finish_line_3_bot_body_entered"]
+[connection signal="body_entered" from="GameManager/Level_three_finish_line/FinishLine_3_bot" to="GameManager" method="_on_finish_line_mid_body_entered"]
